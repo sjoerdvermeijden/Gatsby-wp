@@ -55,7 +55,7 @@ function Navigation() {
             <Nav>
                 <ul>
                     { data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => {
-                        return <StyledLink to={item.object_slug} key={item.wordpress_id}> {item.title} </StyledLink>;
+                        return <StyledLink to={`/${item.object_slug}`} key={item.wordpress_id}> {item.title} </StyledLink>;
                     })}
                 </ul>
             </Nav>
