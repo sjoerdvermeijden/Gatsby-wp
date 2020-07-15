@@ -6,21 +6,23 @@ import Wrap from './wrap'
 
 const PostsWrapper = styled.div`
     padding: 50px 0;
-    background: green;
+    background: #f5f5f5;
 
     ul {
         list-style-type: none;
         margin: -20px;
+        display: flex;
     }
 
     li {
+        padding: 20px;
         width: 33%;
-        margin: 20px;
-    }
 
-    div {
-        padding: 15px;
-        background: red;
+        div {
+            padding: 25px;
+            background: crimson;
+            box-shadow: 5px 5px 8px 0px rgba(153,153,153,1);
+        }
     }
 `
 

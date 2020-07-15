@@ -12,7 +12,7 @@ const Nav = styled.nav`
     div {
 
         &:not(:last-child) {
-            margin-right: 25px;
+            margin-right: 30px;
         }
     }
 `
