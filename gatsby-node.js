@@ -31,6 +31,8 @@ exports.createPages = async ({ graphql, actions }) => {
                         path
                         status
                         template
+                        title
+                        content
                     }
                 }
             }
@@ -42,6 +44,8 @@ exports.createPages = async ({ graphql, actions }) => {
                         status
                         template
                         format
+                        title
+                        content
                     }
                 }
             }
@@ -73,9 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
             // can query data specific to each page.
             path: edge.node.path,
             component: slash(pageTemplate),
-            context: {
-                id: edge.node.id,
-            },
+            context: edge.node
         })
     })
 
@@ -86,10 +88,10 @@ exports.createPages = async ({ graphql, actions }) => {
     // The Post ID is prefixed with 'POST_'
     allWordpressPost.edges.forEach(edge => {
         createPage({
-            path: edge.node.path,
+            path: `/post/${edge.node.path}`,
             component: slash(postTemplate),
             context: {
-                id: edge.node.id,
+                context: edge.node
             },
         })
     })
